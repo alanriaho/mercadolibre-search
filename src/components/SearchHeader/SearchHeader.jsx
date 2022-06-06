@@ -1,4 +1,3 @@
-import React from 'react';
 import logo from '../../assets/logo.png';
 import searchIcon from '../../assets/search-icon.png';
 import './SearchHeader.scss';
