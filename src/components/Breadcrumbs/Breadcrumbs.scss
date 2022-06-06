@@ -1,0 +1,25 @@
+@use '../../variables';
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  height: 46px;
+  max-width: variables.$containers-max-width;
+  margin: auto;
+  padding: 0 variables.$default-padding;
+
+  ul {
+    padding: 0;
+    text-align: start;
+
+    li {
+      display: inline;
+      color: #999999;
+      font-size: 14px;
+
+      &.last {
+        font-weight: bold;
+      }
+    }
+  }
+}

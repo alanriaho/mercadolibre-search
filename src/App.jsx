@@ -1,4 +1,5 @@
 import SearchHeader from './components/SearchHeader/SearchHeader';
+import Breadcrumbs from './components/Breadcrumbs/Breadcrumbs';
 import './App.scss';
 
 function App() {
@@ -7,7 +8,9 @@ function App() {
       <header>
         <SearchHeader />
       </header>
-      <nav>Breadcrumbs</nav>
+      <nav>
+        <Breadcrumbs sections={["Hello", "Other hello", "Just testing"]} />
+      </nav>
       <section role="list">Results</section>
     </div>
   );

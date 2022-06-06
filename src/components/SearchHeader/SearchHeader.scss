@@ -2,7 +2,7 @@
 
 .search-header {
   background-color: variables.$main-color;
-  padding: 15px;
+  padding: variables.$default-padding;
 
   &__container {
     display: flex;
