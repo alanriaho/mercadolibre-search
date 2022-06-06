@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.png';
 import searchIcon from '../../assets/search-icon.png';
 import './SearchHeader.scss';
@@ -6,7 +7,9 @@ const SearchHeader = () => {
   return (
     <div className='search-header'>
       <div className='search-header__container'>
-        <img src={logo} alt='logo' className='search-header__container__logo' />
+        <Link to='/'>
+          <img src={logo} alt='logo' className='search-header__container__logo' />
+        </Link>
         <div className="search-header__container__input-container">
           <input
             className="search-header__container__input-container__input"
