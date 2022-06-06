@@ -11,6 +11,7 @@ const SearchHeader = () => {
           <input
             className="search-header__container__input-container__input"
             placeholder='Nunca dejes de buscar'
+            role="search"
           />
           <img src={searchIcon} alt='search' className='search-header__container__input-container__button' />
         </div>

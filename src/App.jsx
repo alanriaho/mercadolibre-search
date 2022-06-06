@@ -4,9 +4,9 @@ import './App.scss';
 function App() {
   return (
     <div className="app">
-      <section role="search">
+      <header>
         <SearchHeader />
-      </section>
+      </header>
       <nav>Breadcrumbs</nav>
       <section role="list">Results</section>
     </div>
