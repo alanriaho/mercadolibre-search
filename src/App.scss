@@ -1,3 +1,7 @@
+@use './variables';
+
 .app {
+  height: 100vh;
   text-align: center;
+  background-color: variables.$gray;
 }
