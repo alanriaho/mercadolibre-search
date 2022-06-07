@@ -10,7 +10,7 @@ const ProductsList = ({ productsList }) => (
           <ProductRow
             title={product.title}
             imageSource={product.thumbnail}
-            price={product.original_price ?? product.price}
+            price={product.price}
             stateName={product.address.state_name}
             productAttribute={product.attributes[0].values[0].name}
             hasFreeShipping={product.shipping.free_shipping}
