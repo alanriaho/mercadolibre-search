@@ -3,6 +3,7 @@ import SearchHeader from './components/SearchHeader/SearchHeader';
 import Breadcrumbs from './components/Breadcrumbs/Breadcrumbs';
 import ProductsList from './components/ProductsList/ProductsList';
 import './App.scss';
+import ProductDetails from './components/ProductDetails/ProductDetails';
 
 function App() {
   const [results, setResults] = useState([]);
@@ -37,6 +38,9 @@ function App() {
       <nav>
         <Breadcrumbs sections={["Hello", "Other hello", "Just testing"]} />
       </nav>
+      <section>
+        <ProductDetails productId="MLA756297077" />
+      </section>
       <section role="list">
         <ProductsList productsList={results} />
       </section>
