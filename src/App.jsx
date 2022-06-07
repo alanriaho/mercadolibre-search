@@ -1,8 +1,8 @@
-import { Navigate, Outlet, Route, Routes } from 'react-router-dom';
-import SearchHeader from './components/SearchHeader/SearchHeader';
-import ProductsList from './components/ProductsList/ProductsList';
-import ProductDetails from './components/ProductDetails/ProductDetails';
-import './App.scss';
+import { Navigate, Outlet, Route, Routes } from "react-router-dom";
+import SearchHeader from "./components/SearchHeader/SearchHeader";
+import ProductsList from "./components/ProductsList/ProductsList";
+import ProductDetails from "./components/ProductDetails/ProductDetails";
+import "./App.scss";
 
 const App = () => (
   <div className="app">
