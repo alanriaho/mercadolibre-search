@@ -4,50 +4,51 @@ import Breadcrumbs from "../Breadcrumbs/Breadcrumbs";
 import "./ProductDetails.scss";
 
 const ProductDetails = () => {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoadingInfo, setIsLoadingInfo] = useState(false);
+  const [isLoadingDescription, setIsLoadingDescription] = useState(false);
   const [productInfo, setProductInfo] = useState(null);
   const [productDescription, setProductDescription] = useState("");
   const { id } = useParams();
 
   useEffect(() => {
     if (!productInfo) {
-      setIsLoading(true);
+      setIsLoadingInfo(true);
       fetch(`https://api.mercadolibre.com/items/${id}`)
         .then((data) => data.json())
         .then((parsedData) => setProductInfo(parsedData))
         .catch((error) => console.error(error))
-        .finally(() => setIsLoading(false));
+        .finally(() => setIsLoadingInfo(false));
     }
   }, [id, productInfo]);
 
   useEffect(() => {
     if (!productDescription) {
-      setIsLoading(true);
+      setIsLoadingDescription(true);
       fetch(`https://api.mercadolibre.com/items/${id}/description`)
         .then((data) => data.json())
         .then((parsedData) => setProductDescription(parsedData))
         .catch((error) => console.error(error))
-        .finally(() => setIsLoading(false));
+        .finally(() => setIsLoadingDescription(false));
     }
   }, [id, productDescription]);
 
   return  (
     <>
       {/* Would be good to have te category in the breadcrumbs, but it's not returned from the API */}
-      <Breadcrumbs sections={["Resultados de búsqueda", productInfo?.title]} />
-      {isLoading || !productDescription || !productInfo ? <p>Cargando...</p> : (
+      <Breadcrumbs sections={["Resultados de búsqueda", productInfo?.title ?? "Cargando..."]} />
+      {isLoadingInfo || isLoadingDescription || !productDescription || !productInfo ? <p>Cargando...</p> : (
         <div className="product-details">
           <div className="product-details__container">
             <div className="product-details__container__info-and-image">
               <div className="product-details__container__info-and-image__info">
                 <span className="product-details__container__info-and-image__info__condition-and-sold">
-                  {productInfo?.condition === "new" ? "Nuevo" : "Usado"} - {productInfo?.sold_quantity} vendidos
+                  {productInfo.condition === "new" ? "Nuevo" : "Usado"} - {productInfo.sold_quantity} vendidos
                 </span>
-                <h2>{productInfo?.title}</h2>
+                <h2>{productInfo.title}</h2>
                 <p className="product-details__container__info-and-image__info__price">
-                  {(productInfo?.price ?? "").toLocaleString("es-AR", {
+                  {(productInfo.price ?? "").toLocaleString("es-AR", {
                     style: "currency",
-                    currency: productInfo?.currency_id || "ARS",
+                    currency: productInfo.currency_id || "ARS",
                     minimumFractionDigits: 0,
                     maximumFractionDigits: 0,
                   })}
@@ -56,11 +57,11 @@ const ProductDetails = () => {
                   Comprar
                 </button>
               </div>
-              <img src={productInfo?.thumbnail} alt={productInfo?.title} />
+              <img src={productInfo.thumbnail} alt={productInfo.title} />
             </div>
             <div className="product-details__container__details">
                 <h3>Descripción del producto</h3>
-                <p>{productDescription?.text || productDescription?.plain_text}</p>
+                <p>{productDescription.text || productDescription.plain_text}</p>
             </div>
           </div>
         </div>
