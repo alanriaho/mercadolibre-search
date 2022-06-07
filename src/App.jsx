@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import SearchHeader from './components/SearchHeader/SearchHeader';
 import Breadcrumbs from './components/Breadcrumbs/Breadcrumbs';
 import ProductsList from './components/ProductsList/ProductsList';
-import './App.scss';
 import ProductDetails from './components/ProductDetails/ProductDetails';
+import './App.scss';
 
 function App() {
   const [results, setResults] = useState([]);
