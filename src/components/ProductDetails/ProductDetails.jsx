@@ -11,26 +11,22 @@ const ProductDetails = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    if (!productInfo) {
-      setIsLoadingInfo(true);
-      fetch(`https://api.mercadolibre.com/items/${id}`)
-        .then((data) => data.json())
-        .then((parsedData) => setProductInfo(parsedData))
-        .catch((error) => console.error(error))
-        .finally(() => setIsLoadingInfo(false));
-    }
-  }, [id, productInfo]);
+    setIsLoadingInfo(true);
+    fetch(`https://api.mercadolibre.com/items/${id}`)
+      .then((data) => data.json())
+      .then((parsedData) => setProductInfo(parsedData))
+      .catch((error) => console.error(error))
+      .finally(() => setIsLoadingInfo(false));
+  }, [id]);
 
   useEffect(() => {
-    if (!productDescription) {
-      setIsLoadingDescription(true);
-      fetch(`https://api.mercadolibre.com/items/${id}/description`)
-        .then((data) => data.json())
-        .then((parsedData) => setProductDescription(parsedData))
-        .catch((error) => console.error(error))
-        .finally(() => setIsLoadingDescription(false));
-    }
-  }, [id, productDescription]);
+    setIsLoadingDescription(true);
+    fetch(`https://api.mercadolibre.com/items/${id}/description`)
+      .then((data) => data.json())
+      .then((parsedData) => setProductDescription(parsedData))
+      .catch((error) => console.error(error))
+      .finally(() => setIsLoadingDescription(false));
+  }, [id]);
 
   return  (
     <>
