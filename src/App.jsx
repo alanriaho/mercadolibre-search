@@ -21,7 +21,8 @@ function App() {
     fetch(`https://api.mercadolibre.com/sites/MLA/search?q=:${query}`)
       .then((data) => data.json())
       .then((parsedData) => setResults(parsedData.results.slice(0, resultsQuantity)))
-      .catch((error) => console.error(error));
+      .catch((error) => console.error(error))
+      .finally(() => setIsLoading(false));
   }
 
   return (
