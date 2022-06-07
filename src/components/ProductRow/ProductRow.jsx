@@ -1,7 +1,7 @@
 import shippingImage from "../../assets/shipping.png";
 import "./ProductRow.scss";
 
-const ProductRow = ({ title, imageSource, price, stateName, productAttribute, hasFreeShipping }) => (
+const ProductRow = ({ title, imageSource, price, stateName, productAttribute, currency, hasFreeShipping }) => (
   <div className="product-row">
     <img src={imageSource} alt="Imagen del producto" className="product-row__thumbnail" />
     <div className="product-row__info">
@@ -10,7 +10,7 @@ const ProductRow = ({ title, imageSource, price, stateName, productAttribute, ha
           <span className="product-row__info__top__price-and-shipping__price">
             {price.toLocaleString("es-AR", {
               style: "currency",
-              currency: "ARS",
+              currency: currency,
               minimumFractionDigits: 0,
               maximumFractionDigits: 0,
             })}
