@@ -7,6 +7,7 @@ import './App.scss';
 
 function App() {
   const [results, setResults] = useState([]);
+  const [breadcrumbs, setBreadcrumbs] = useState(null);
   const [query, setQuery] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
@@ -21,7 +22,10 @@ function App() {
     setIsLoading(true);
     fetch(`https://api.mercadolibre.com/sites/MLA/search?q=:${query}`)
       .then((data) => data.json())
-      .then((parsedData) => setResults(parsedData.results.slice(0, resultsQuantity)))
+      .then((parsedData) => {
+        setBreadcrumbs([parsedData.filters?.[0]?.values?.[0]?.name ?? "Búsqueda", `Resultados para "${query}"`]);
+        setResults(parsedData.results.slice(0, resultsQuantity));
+      })
       .catch((error) => console.error(error))
       .finally(() => setIsLoading(false));
   }
@@ -36,13 +40,13 @@ function App() {
         />
       </header>
       <nav>
-        <Breadcrumbs sections={["Hello", "Other hello", "Just testing"]} />
+        {breadcrumbs && <Breadcrumbs sections={breadcrumbs} />}
       </nav>
       <section>
-        <ProductDetails productId="MLA756297077" />
+        <ProductDetails productId="MLA756297077" setBreadcrumbs={setBreadcrumbs} />
       </section>
       <section role="list">
-        <ProductsList productsList={results} />
+        {isLoading ? <p>Cargando...</p> : <ProductsList productsList={results} />}
       </section>
     </div>
   );
