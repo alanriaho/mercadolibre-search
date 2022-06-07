@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import SearchHeader from './components/SearchHeader/SearchHeader';
 import Breadcrumbs from './components/Breadcrumbs/Breadcrumbs';
+import ProductsList from './components/ProductsList/ProductsList';
 import './App.scss';
 
 function App() {
@@ -35,7 +36,9 @@ function App() {
       <nav>
         <Breadcrumbs sections={["Hello", "Other hello", "Just testing"]} />
       </nav>
-      <section role="list">Results</section>
+      <section role="list">
+        <ProductsList productsList={results} />
+      </section>
     </div>
   );
 }

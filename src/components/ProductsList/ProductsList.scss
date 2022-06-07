@@ -1,0 +1,15 @@
+@use '../../variables';
+
+.products-list {
+  width: 100%;
+  max-width: variables.$containers-max-width;
+  margin: auto;
+  background-color: #fff;
+
+  hr {
+    width: 97%;
+    margin: 0;
+    border-width: 2px 0 0 0;
+    border-color: #ffffff15
+  }
+}

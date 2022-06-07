@@ -1,0 +1,46 @@
+.product-row {
+  display: grid;
+  grid-template-columns: 212px auto;
+
+  &__thumbnail {
+    padding: 16px;
+    width: 180px;
+    height: 180px;
+    border-radius: 20px; // Designs come up with 4px but it's not appreciable so I increased it
+  }
+
+  &__info {
+    padding: 36px 90px 36px 0;
+
+    &__top {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 16px; // Designs come up with 32px but it looks different so I decreased it to 16px
+
+      &__price-and-shipping {
+        display: flex;
+        align-items: center;
+
+        &__price {
+          font-size: 24px;
+        }
+
+        img {
+          width: 20px;
+          margin-left: 10px;
+        }
+      }
+
+      &__location {
+        color: #999;
+        font-size: 12px;
+      }
+    }
+
+    p {
+      margin: 0;
+      font-size: 18px;
+      text-align: start;
+    }
+  }
+}
