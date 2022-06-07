@@ -1,9 +1,7 @@
 @use '../../variables';
 
 .products-list {
-  max-width: variables.$containers-max-width;
-  padding: 0 variables.$default-padding;
-  margin: auto;
+  @include variables.section;
 
   &__container {
     border-radius: variables.$default-section-border-radius;

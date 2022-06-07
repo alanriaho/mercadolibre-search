@@ -4,9 +4,7 @@
   display: flex;
   align-items: center;
   height: 46px;
-  max-width: variables.$containers-max-width;
-  margin: auto;
-  padding: 0 variables.$default-padding;
+  @include variables.section;
 
   ul {
     padding: 0;
