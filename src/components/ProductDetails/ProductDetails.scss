@@ -51,6 +51,7 @@
       img {
         width: 100%;
         max-width: 680px;
+        margin-top: 16px;
       }
     }
 
@@ -82,7 +83,7 @@
 
         img {
           width: calc(100% - 16px);
-          margin-right: 16px;
+          margin: 0 16px 0 0;
         }
       }
 
