@@ -1,3 +1,4 @@
+import { nanoid } from "nanoid";
 import './Breadcrumbs.scss';
 
 const Breadcrumbs = ({ sections }) => sections.length ? (
@@ -5,9 +6,9 @@ const Breadcrumbs = ({ sections }) => sections.length ? (
     <ul>
       <li>{sections[0]} {'> '}</li>
       {sections.slice(1).map((section, index, arr) => index === (arr.length - 1) ? (
-          <li key={section} className='last'>{section}</li>
+          <li key={nanoid()} className='last'>{section}</li>
         ) : (
-          <li key={section}>{`${section} > `}</li>
+          <li key={nanoid()}>{`${section} > `}</li>
         )
       )}
     </ul>
