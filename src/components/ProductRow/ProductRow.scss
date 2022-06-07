@@ -1,16 +1,34 @@
+@use '../../variables';
+
 .product-row {
   display: grid;
-  grid-template-columns: 212px auto;
+  grid-template-columns: 122px auto;
+  align-content: center;
+
+  @media all and (min-width: variables.$desktop-min-breakpoint) {
+    grid-template-columns: 212px auto;
+  }
 
   &__thumbnail {
     padding: 16px;
-    width: 180px;
-    height: 180px;
+    margin-top: 24px;
+    width: 90px;
+    height: 90px;
     border-radius: 20px; // Designs come up with 4px but it's not appreciable so I increased it
+
+    @media all and (min-width: variables.$desktop-min-breakpoint) {
+      margin-top: 0;
+      width: 180px;
+      height: 180px;
+    }
   }
 
   &__info {
-    padding: 36px 90px 36px 0;
+    padding: 36px 16px 36px 0;
+
+    @media all and (min-width: variables.$desktop-min-breakpoint) {
+      padding-right: 90px;
+    }
 
     &__top {
       display: flex;

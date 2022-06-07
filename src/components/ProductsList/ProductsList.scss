@@ -1,15 +1,19 @@
 @use '../../variables';
 
 .products-list {
-  width: 100%;
   max-width: variables.$containers-max-width;
+  padding: 0 variables.$default-padding;
   margin: auto;
-  background-color: #fff;
 
-  hr {
-    width: 97%;
-    margin: 0;
-    border-width: 2px 0 0 0;
-    border-color: #ffffff15
+  &__container {
+    border-radius: variables.$default-section-border-radius;
+    background-color: #fff;
+
+    hr {
+      width: 97%;
+      margin: 0 auto;
+      border-width: 2px 0 0 0;
+      border-color: #ffffff15
+    }
   }
 }
