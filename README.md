@@ -5,8 +5,3 @@ To run the project in development mode, first make sure you have a recent versio
 ### `npm start`
 
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-
-Or you can just access a deployed version:
-
-### URL:
