@@ -32,8 +32,6 @@ const ProductsList = () => {
     searchForResults();
   }, [searchForResults]);
   
-  console.log(results);
-
   return (
     <>
       <Breadcrumbs sections={[category, query ? `Resultados para "${query}"` : null]} />
