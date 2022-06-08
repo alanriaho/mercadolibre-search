@@ -4,6 +4,7 @@
   display: grid;
   grid-template-columns: 122px auto;
   align-content: center;
+  text-align: start;
 
   @media all and (min-width: variables.$desktop-min-breakpoint) {
     grid-template-columns: 212px auto;
@@ -15,6 +16,7 @@
     width: 90px;
     height: 90px;
     border-radius: 20px; // Designs come up with 4px but it's not appreciable so I increased it
+    cursor: pointer;
 
     @media all and (min-width: variables.$desktop-min-breakpoint) {
       margin-top: 0;
@@ -53,6 +55,11 @@
         color: #999;
         font-size: 12px;
       }
+    }
+
+    &__title {
+      display: inline;
+      cursor: pointer;
     }
 
     p {

@@ -49,6 +49,7 @@ const ProductsList = () => {
                   stateName={product.address.state_name}
                   productAttribute={product.attributes[0].values[0].name}
                   currency={product.currency_id || "ARS"}
+                  id={product.id}
                   hasFreeShipping={product.shipping.free_shipping}
                 />
                 {index !== (results.length - 1) && <hr />}{/* Don't show the separator for the last product row */}
