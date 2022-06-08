@@ -58,8 +58,9 @@
     }
 
     &__title {
-      display: inline;
-      cursor: pointer;
+      text-decoration: none;
+      font-size: 18px;
+      color: #000;
     }
 
     p {
