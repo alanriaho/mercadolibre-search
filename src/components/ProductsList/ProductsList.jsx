@@ -36,7 +36,7 @@ const ProductsList = () => {
 
   return (
     <>
-      <Breadcrumbs sections={[category, `Resultados para "${query}"`]} />
+      <Breadcrumbs sections={[category, query ? `Resultados para "${query}"` : null]} />
       {isLoading ? <p>Cargando...</p> : (
         <div className="products-list">
           <div className="products-list__container">
